@@ -1,0 +1,17 @@
+{
+  "name": "api-quiz",
+  "version": "1.0.0",
+  "description": "Api for React-Quiz",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+    "express":"*",
+    "body-parser":"*",
+    "mongoose":"*",
+    "nodemon":"*"
+  },
+  "author": "Federico Bernardi",
+  "license": "ISC"
+}

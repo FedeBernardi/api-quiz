@@ -1,0 +1,22 @@
+db.questions.insert([
+  {"_id":0,"question":"¿Cuando se fundo Globant?","correctAnswer":2,"__v":0,"answers":[{"id":1,"text":"2000"},{"id":2,"text":"2003"},{"id":3,"text":"2008"}]},
+  {"_id":1,"question":"¿Quién escribió \"El Diario de Ana Frank\"?","correctAnswer":1,"__v":0,"answers":[{"id":1,"text":"Ana Frank"},{"id":2,"text":"La madre de Ana Frank"},{"id":3,"text":"Otto Mayer"}]},
+  {"_id":2,"question":" ¿Cuál es la moneda de Suiza?","correctAnswer":2,"__v":0,"answers":[{"id":1,"text":"El peso Suizo"},{"id":2,"text":"El franco suizo"},{"id":3,"text":"El dolar suizo"}]},
+  {"_id":3,"question":"¿Cuándo se instaló el primer semáforo?","correctAnswer":3,"__v":0,"answers":[{"id":1,"text":"1911"},{"id":2,"text":"1851"},{"id":3,"text":"1868"}]},
+  {"_id":4,"question":" ¿Cuál es el único mamífero con cuatro rodillas? ","correctAnswer":3,"__v":0,"answers":[{"id":1,"text":"El caballo"},{"id":2,"text":"El leon"},{"id":3,"text":"El elefante"}]},
+  {"_id":5,"question":"¿En que ciudad se suicido la poetisa Alfonsína Storni?","correctAnswer":2,"answers":[{"text":"La Plata","id":1},{"text":"Mar del Plata","id":2},{"text":"Buenos Aires","id":3}]},
+  {"_id":6,"question":"¿Que país ganó el primer mundial de fútbol? ","correctAnswer":2,"__v":0,"answers":[{"id":1,"text":"Argentina"},{"id":2,"text":"Uruguay"},{"id":3,"text":"Brazil"}]},
+  {"_id":7,"question":"¿En que año se cayó el Muro de Berlín? ","correctAnswer":1,"__v":0,"answers":[{"id":1,"text":"1989"},{"id":2,"text":"1961"},{"id":3,"text":"1975"}]},
+  {"_id":8,"question":"¿Que famoso escritor escribio \"Rayuela\"? ","correctAnswer":3,"__v":0,"answers":[{"id":1,"text":"Federico García Lorca"},{"id":2,"text":"Jorge Luis Borges"},{"id":3,"text":"Julio Cortázar"}]},
+  {"_id":9,"question":"¿Que tenista masculino es el mayor ganador de Grand Slams? ","correctAnswer":2,"__v":0,"answers":[{"id":1,"text":"Pate Sampras"},{"id":2,"text":"Roger Federer"},{"id":3,"text":"Rafael Nadal"}]},
+  {"_id":10,"question":"¿Qué personajes de un cuento de hadas terminaron en una casa de jengibre?","correctAnswer":3,"__v":0,"answers":[{"id":1,"text":"Jack y Lilly"},{"id":2,"text":"Pinocho y Gepeto"},{"id":3,"text":"Hansel y Gretel"}]},
+  {"_id":11,"question":"¿Steven Tyler es el cantante de qué famosa banda?","correctAnswer":3,"__v":0,"answers":[{"id":1,"text":"Rolling Stones"},{"id":2,"text":"AC-DC"},{"id":3,"text":"Aerosmith"}]},
+  {"_id":12,"question":"¿La Estatua de la Libertad fue regalada a los Estados Unidos por qué país?","correctAnswer":1,"__v":0,"answers":[{"id":1,"text":"Francia"},{"id":2,"text":"España"},{"id":3,"text":"Italia"}]},
+  {"_id":13,"question":"¿Cúal es la flor nacional argentina?","correctAnswer":2,"__v":0,"answers":[{"id":1,"text":"Girasol"},{"id":2,"text":"Ceibo"},{"id":3,"text":"Jacaranda"}]},
+  {"_id":14,"question":"¿En que ciudad inglesa nacieron los Beattles?","correctAnswer":3,"__v":0,"answers":[{"id":1,"text":"Manchester"},{"id":2,"text":"Londres"},{"id":3,"text":"Liverpool"}]},
+  {"_id":15,"question":"¿Como se llamaban los protagonistas de la serie Friends?","correctAnswer":2,"__v":0,"answers":[{"id":1,"text":"Chester, Matt, Ronny"},{"id":2,"text":"Chandler, Ross, Joey"},{"id":3,"text":"Chen, Rise, Jack"}]},
+  {"_id":16,"question":"¿Cual es la capital de Australia?","correctAnswer":3,"__v":0,"answers":[{"id":1,"text":"Sidney"},{"id":2,"text":"Melbourne"},{"id":3,"text":"Canberra"}]},
+  {"_id":17,"question":"¿Como se llama la obra mas exitosa del mangaka Akira Toriyama?","correctAnswer":1,"__v":0,"answers":[{"id":1,"text":"Dragon Ball"},{"id":2,"text":"Dr. Slump"},{"id":3,"text":"Dragon Quest"}]},
+  {"_id":18,"question":"¿Cuantos anillos de la NBA ganó Emanuel Ginobili?","correctAnswer":2,"__v":0,"answers":[{"id":1,"text":"2"},{"id":2,"text":"4"},{"id":3,"text":"Ninguno"}]},
+  {"_id":19,"question":"¿Como se llamaba el dios griego de los oceanos?","correctAnswer":1,"__v":0,"answers":[{"id":1,"text":"Poseidon"},{"id":2,"text":"Hades"},{"id":3,"text":"Zeus"}]}
+]);
