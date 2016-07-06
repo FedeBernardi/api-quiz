@@ -1,60 +1,31 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+var express = require('express'),
+    app = express(),
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose');
 
 app.use(bodyParser.json());
 
-var Questions = require('./models/questions');
-var User = require('./models/users');
+var questionsController = require('./controllers/questionsController'),
+    usersController = require('./controllers/usersController');
+
 // Connect to Mongoose
 mongoose.connect('mongodb://localhost/quiz-db');
 var db = mongoose.connection;
 
-app.get('/', function(req, res){
-    res.send('Please use another ENDPOINT');
+// CORS configuration in Express
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
-app.get('/api/questions',function(req, res){
-  Questions.getQuestions(function(err, questions){
-    if(err){
-      throw err;
-    }
-    res.json(questions);
-  })
-})
+app.get('/api/questions', questionsController.randomQuestions);
+app.post('/api/questions', questionsController.addQuestion);
 
-app.post('/api/questions',function(req, res){
-  var question = req.body;
-  Questions.addQuestion(question, function(err, question){
-    if(err){
-      throw err;
-    }
-    res.json(question);
-  })
-})
-
-app.post('/api/users',function(req, res){
-  var user = req.body;
-  User.addUser(user, function(err, user){
-    if(err){
-      throw err;
-    }
-    res.json(user);
-  })
-});
+app.get('/api/users', usersController.getAllUsers);
+app.post('/api/users', usersController.addUser);
 
 
-app.get('/api/users',function(req, res){
-  User.getUser(function(err, user){
-    if(err){
-      throw err;
-    }
-    res.json(user);
-  })
-})
+app.listen(3001);
 
-
-app.listen(3000);
-
-console.log('Running on port 3000');
+console.log('Running on port 3001');
