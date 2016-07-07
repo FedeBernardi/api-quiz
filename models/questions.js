@@ -1,5 +1,6 @@
-//The number of question per game.
+//The number of questions per game.
 const MAX_QUESTIONS = 6;
+//The number of questions in the Data Base.
 const QUESTIONS_IN_DB = 20;
 
 var mongoose = require('mongoose');

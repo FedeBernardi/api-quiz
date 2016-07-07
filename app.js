@@ -3,10 +3,10 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose');
 
-app.use(bodyParser.json());
-
 var questionsController = require('./controllers/questionsController'),
     usersController = require('./controllers/usersController');
+
+app.use(bodyParser.json());
 
 // Connect to Mongoose
 mongoose.connect('mongodb://localhost/quiz-db');
@@ -23,6 +23,7 @@ app.get('/api/questions', questionsController.randomQuestions);
 app.post('/api/questions', questionsController.addQuestion);
 
 app.get('/api/users', usersController.getAllUsers);
+app.post('/api/users/login', usersController.loginUser);
 app.post('/api/users', usersController.addUser);
 
 

@@ -23,3 +23,11 @@ module.exports.getUser = function(callback,limit){
 module.exports.addUser = function(user, callback){
   User.create(user, callback);
 }
+
+module.exports.loginUser = function(credentials, callback){
+  var query = {
+    username:credentials.username,
+    password:credentials.password
+  }
+  User.find(query, {username: true}, callback);
+}
