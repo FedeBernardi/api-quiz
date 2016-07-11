@@ -6,6 +6,9 @@ var express = require('express'),
 var questionsController = require('./controllers/questionsController'),
     usersController = require('./controllers/usersController');
 
+var questionsRouter = express.Router(),
+    usersRouter = express.Router();
+
 app.use(bodyParser.json());
 
 // Connect to Mongoose
@@ -19,13 +22,16 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/api/questions', questionsController.randomQuestions);
-app.post('/api/questions', questionsController.addQuestion);
+questionsRouter.get('/questions', questionsController.randomQuestions);
+questionsRouter.post('/questions', questionsController.addQuestion);
 
-app.get('/api/users', usersController.getAllUsers);
-app.post('/api/users/login', usersController.loginUser);
-app.post('/api/users', usersController.addUser);
+app.use('/api',questionsRouter);
 
+usersRouter.get('/users', usersController.getAllUsers);
+usersRouter.post('/users/login', usersController.loginUser);
+usersRouter.post('/users', usersController.addUser);
+
+app.use('/api',usersRouter);
 
 app.listen(3001);
 
