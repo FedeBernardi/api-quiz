@@ -12,7 +12,7 @@ var usersSchema = mongoose.Schema({
   }
 });
 
-var User = module.export = mongoose.model('User', usersSchema);
+var User = mongoose.model('User', usersSchema);
 
 // Get Questions
 
@@ -29,5 +29,5 @@ module.exports.loginUser = function(credentials, callback){
     username:credentials.username,
     password:credentials.password
   }
-  User.find(query, {username: true}, callback);
+  User.find(query, callback);
 }

@@ -6,11 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies":{
-    "express":"*",
-    "body-parser":"*",
-    "mongoose":"*",
-    "nodemon":"*"
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "express-jwt": "^3.4.0",
+    "jsonwebtoken": "^7.0.1",
+    "mongoose": "*",
+    "nodemon": "*"
   },
   "author": "Federico Bernardi",
   "license": "ISC"

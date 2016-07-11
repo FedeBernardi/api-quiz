@@ -1,4 +1,6 @@
+var jwt = require('jsonwebtoken');
 var User = require('../models/users');
+var config = require('../config');
 
 function addUser(req, res){
   var user = req.body;
@@ -25,7 +27,22 @@ function loginUser(req, res){
     if(err){
       throw err;
     }
-    res.json(data);
+
+    if(data.length == 0) {
+      sendData = {
+        error: 'Incorrect username or password'
+      };
+    } else {
+      var username = data[0].username;
+      var token = jwt.sign({username}, config.secret);
+
+      sendData = {
+        username,
+        token
+      };
+    }
+
+    res.json(sendData);
   })
 }
 

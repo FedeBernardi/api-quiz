@@ -25,7 +25,7 @@ var questionSchema = mongoose.Schema({
   }
 });
 
-var Question = module.export = mongoose.model('Question', questionSchema);
+var Question = mongoose.model('Question', questionSchema);
 
 // Get ALL Questions 
 module.exports.getQuestions = function(callback,limit){
