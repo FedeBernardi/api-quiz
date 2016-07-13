@@ -34,7 +34,7 @@ function loginUser(req, res){
       };
     } else {
       var username = data[0].username;
-      var token = jwt.sign({username}, config.secret);
+      var token = jwt.sign({username}, config.secret, {expiresIn: '10h'});
 
       sendData = {
         username,
