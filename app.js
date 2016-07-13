@@ -1,27 +1,18 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    mongoose = require('mongoose'),
-    expressJWT = require('express-jwt');
+    mongoose = require('mongoose');
 
 var config = require('./config');
 
-var questionsController = require('./controllers/questionsController'),
-    usersController = require('./controllers/usersController');
-
-var questionsRouter = express.Router(),
-    usersRouter = express.Router();
-
-app.use(bodyParser.json());
-//Applying expressJWT middleware
-//THIS IS NOT WORKING, NEEDS TO BE CHECKED
-app.use(expressJWT({ secret: config.secret }).unless({ path: ['api/users/login'] }));
+var questionsRouter = require('./routes/questions'),
+    usersRouter = require('./routes/users');
 
 // Connect to Mongoose
 mongoose.connect(config.database);
 var db = mongoose.connection;
 
-
+app.use(bodyParser.json());
 
 // CORS configuration in Express
 app.use(function(req, res, next) {
@@ -30,19 +21,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-usersRouter.get('/users', usersController.getAllUsers);
-usersRouter.post('/users/login', usersController.loginUser);
-usersRouter.post('/users', usersController.addUser);
-
-app.use('/api',usersRouter);
-
-
-questionsRouter.get('/questions', questionsController.randomQuestions);
-questionsRouter.post('/questions', questionsController.addQuestion);
-
-app.use('/api',questionsRouter);
-
-
+app.use('/users',usersRouter.usersRouter);
+app.use('/questions',questionsRouter.questionsRouter);
 
 app.listen(3001);
 
