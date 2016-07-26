@@ -12,8 +12,10 @@ function addUser(req, res){
   })
 }
 
+//All users are returned except the current user.
 function getAllUsers(req, res){
-  User.getUser(function(err, data){
+  var currentUser = new RegExp(req.body.username);
+  User.getUser(currentUser, function(err, data){
     if(err){
       throw err;
     }

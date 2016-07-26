@@ -14,10 +14,8 @@ var usersSchema = mongoose.Schema({
 
 var User = mongoose.model('User', usersSchema);
 
-// Get Questions
-
-module.exports.getUser = function(callback,limit){
-  User.find(callback).limit(limit);
+module.exports.getUser = function(currentUser,callback,limit){
+  User.find({username: { $not : currentUser}}, callback).limit(limit);
 }
 
 module.exports.addUser = function(user, callback){

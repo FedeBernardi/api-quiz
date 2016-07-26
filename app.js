@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
 });
 
 //Applying authentication middleware
-app.use(expressJWT({ secret: config.secret }).unless({ path: ['/users/login'] }));
+app.use(expressJWT({ secret: config.secret }).unless({ path: ['/users/login','/users/registration'] }));
 
 app.use('/users',usersRouter.usersRouter);
 app.use('/questions',questionsRouter.questionsRouter);
