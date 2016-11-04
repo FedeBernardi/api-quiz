@@ -34,6 +34,7 @@ function loginUser(req, res){
       sendData = {
         error: 'Incorrect username or password'
       };
+      res.status(204);
     } else {
       var username = data[0].username;
       var token = jwt.sign({username}, config.secret, {expiresIn: '10h'});
